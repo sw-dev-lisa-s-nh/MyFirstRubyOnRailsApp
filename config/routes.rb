@@ -8,19 +8,25 @@ Rails.application.routes.draw do
 
   post "/sign_up", to: "registrations#create", as: :sign_up
 
-  get "/instrument", to: "instrument#new", as: :new_instrument
+  get "/instrument", to: "registration_instrument#new", as: :new_instrument
   
-  post "/instrument", to: "instrument#create", as: :instrument
+  post "/instrument", to: "registration_instrument#create", as: :instrument
 
   get "/instrument/all", to: "instrument#get", as: :get_all_instruments
 
-  get "/gig", to: "gig#new", as: :new_gig
+  get "/gig", to: "registration_gig#new", as: :new_gig
   
-  post "/gig", to: "gig#create", as: :gig
+  post "/gig", to: "registration_gig#create", as: :gig
 
   get "/gig/all", to: "gig#get", as: :get_all_gigs
 
-  # resources  :user, :instrument, :gig
+  resources  :user do
+    resources :instrument
+  end
+
+  resources  :gig do
+    resources :instrument
+  end
 
   root to: "main#index"
 end

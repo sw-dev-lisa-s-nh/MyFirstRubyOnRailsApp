@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
-
+   
     def get
-       @user = User.all
+       @users = User.all
     end
 
 
