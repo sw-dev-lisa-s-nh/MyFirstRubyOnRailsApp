@@ -13,7 +13,7 @@ class GigController < ApplicationController
     end
 
     def get
-        @gigs=Gig.all
+        @gig = Gig.all
     end
 
     def gig_params

@@ -11,6 +11,13 @@ class InstrumentController < ApplicationController
             render :new
         end    
     end
+
+    def get
+        @instrument = Instrument.all
+    end
+
+    def index
+    end
   
     def instrument_params
         params.require(:instrument).permit(:name)
