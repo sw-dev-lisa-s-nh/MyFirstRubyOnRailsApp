@@ -1,0 +1,63 @@
+<h1>Add a New Gig:</h1>
+
+<%= form_with model: @gig, url: gig_path do |form| %>
+    <% if @gig.errors.any? %>
+        <div class="alert alert-danger">
+            <% @gig.errors.full_messages.each do |message| %>
+                <div><%=message %></div>
+            <% end %>   
+        </div> 
+    <% end %>
+
+    <div class="mb-3">
+        <%= form.label :name %>
+        <%=  form.text_field :name, class: "form-control", placeholder: "gig_name" %>
+    </div>
+
+    <div class="mb-3">
+        <%= form.label :description %>
+        <%=  form.text_field :description, class: "form-control", placeholder: "description of gig" %>
+    </div>
+
+    <div class="mb-3">
+        <%= form.label :start_time %>
+        <%=  form.text_field :start_time, class: "form-control", placeholder: "time of gig" %>
+    </div>
+
+    <div class="mb-3">
+    <%= form.label :duration %>
+    <%=  form.text_field :duration, class: "form-control", placeholder: "duration of gig" %>
+    </div>  
+
+    <div class="mb-3">
+    <%= form.label :genre %>
+    <%=  form.text_field :genre, class: "form-control", placeholder: "genre" %>
+    </div>  
+
+    <div class="mb-3">
+    <%= form.label :date %>
+    <%=  form.text_field :date, class: "form-control", placeholder: "date of gig" %>
+    </div>  
+
+    <div class="mb-3">
+    <%= form.label :address %>
+    <%=  form.text_field :address, class: "form-control", placeholder: "address of gig" %>
+    </div>  
+
+    <div class="mb-3">
+    <%= form.label :phone %>
+    <%=  form.text_field :phone, class: "form-control", placeholder: "phone contact for gig" %>
+    </div>  
+
+    <div class="mb-3">
+    <%= form.label :salary %>
+    <%=  form.text_field :salary, class: "form-control", placeholder: "salary of gig" %>
+    </div>  
+
+    <div class="mb-3">
+        <%= form.submit "Add Gig", class: "btn btn-primary" %>
+    </div>
+<% end %>
+
+
+

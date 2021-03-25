@@ -1,0 +1,20 @@
+<h1>Add a New Instrument:</h1>
+
+<%= form_with model: @instrument, url: instrument_path do |form| %>
+    <% if @instrument.errors.any? %>
+        <div class="alert alert-danger">
+            <% @instrument.errors.full_messages.each do |message| %>
+                <div><%=message %></div>
+            <% end %>   
+        </div> 
+    <% end %>
+
+    <div class="mb-3">
+    <%= form.label :name %>
+    <%=  form.text_field :name, class: "form-control", placeholder: "name" %>
+    </div>  
+
+    <div class="mb-3">
+        <%= form.submit "Add Instrument", class: "btn btn-primary" %>
+    </div>
+<% end %>
