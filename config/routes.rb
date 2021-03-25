@@ -12,9 +12,14 @@ Rails.application.routes.draw do
   
   post "/instrument", to: "instrument#create", as: :instrument
 
+  get "/instrument/all", to: "instrument#get", as: :get_all_instruments
+
+
   get "/gig", to: "gig#new", as: :new_gig
   
   post "/gig", to: "gig#create", as: :gig
+
+  get "/gig/all", to: "gig#get", as: :get_all_gigs
 
   root to: "main#index"
 end

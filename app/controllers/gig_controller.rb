@@ -12,6 +12,10 @@ class GigController < ApplicationController
         end
     end
 
+    def get
+        @gigs=Gig.all
+    end
+
     def gig_params
         params.require(:gig).permit(:name, :description, :start_time, :duration, :genre, :date, :address, :phone, :salary, :status)
     end
