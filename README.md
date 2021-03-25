@@ -3,7 +3,8 @@
 This is my first Ruby on Rails application!
 
 Thanks to GoRails.com -- great tutorial.  I was able to work through that tutorial,
-and the decided to rewrite my Promineo Tech BESD Coding Bootcamp Project.
+and then decided to create a Ruby on Rails app to rewrite my 
+Promineo Tech BESD Coding Bootcamp Final Project.
 
 Using the gorails.com template, I was able to create a simple interface in my browser.
 
@@ -17,17 +18,7 @@ Using the gorails.com template, I was able to create a simple interface in my br
 I will add the rest of this information when I get further along in this implementation!
 ----------------------------------------------------------------------------------------
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
+* How to run the test suite:  Not yet finished
 
 * Deployment instructions: 
 		- Rails db:create
@@ -36,3 +27,5 @@ I will add the rest of this information when I get further along in this impleme
 		- In the browser of your choice:    127.0.0.1:3000 (or localhost:3000)
 		- Follow the instructions... 
 		
+----------------------------------------------------------------------------------------
+
