@@ -57,6 +57,11 @@
     </div>  
 
     <div class="mb-3">
+    <%= form.label :instrument_requested %>
+    <%=  form.text_field :instrument_id, class: "form-control", placeholder: "id of instrument needed" %>
+    </div>  
+
+    <div class="mb-3">
         <%= form.submit "Add Gig", class: "btn btn-primary" %>
     </div>
 <% end %>

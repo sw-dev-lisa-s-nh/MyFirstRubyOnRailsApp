@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_24_012959) do
+ActiveRecord::Schema.define(version: 2021_03_27_201040) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "gig_instruments", force: :cascade do |t|
+    t.bigint "gigs_id"
+    t.bigint "instruments_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["gigs_id"], name: "index_gig_instruments_on_gigs_id"
+    t.index ["instruments_id"], name: "index_gig_instruments_on_instruments_id"
+  end
 
   create_table "gigs", force: :cascade do |t|
     t.string "name"
@@ -25,9 +34,10 @@ ActiveRecord::Schema.define(version: 2021_03_24_012959) do
     t.string "address"
     t.string "phone"
     t.string "salary"
-    t.string "status"
+    t.bigint "instrument_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["instrument_id"], name: "index_gigs_on_instrument_id"
   end
 
   create_table "instruments", force: :cascade do |t|
@@ -36,14 +46,26 @@ ActiveRecord::Schema.define(version: 2021_03_24_012959) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "user_instruments", force: :cascade do |t|
+    t.bigint "users_id"
+    t.bigint "instruments_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["instruments_id"], name: "index_user_instruments_on_instruments_id"
+    t.index ["users_id"], name: "index_user_instruments_on_users_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email"
     t.string "password_digest"
-    t.string "instrument"
     t.string "first_name"
     t.string "last_name"
+    t.bigint "instrument_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["instrument_id"], name: "index_users_on_instrument_id"
   end
 
+  add_foreign_key "gigs", "instruments"
+  add_foreign_key "users", "instruments"
 end

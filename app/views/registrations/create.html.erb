@@ -2,7 +2,7 @@
 <br>
 <h1>Add a New User:</h1>
 
-<%= form_with model: @user, url: new_sign_up_path do |form| %>
+<%= form_with model: @user, url: sign_up_path do |form| %>
     <% if @user.errors.any? %>
         <div class="alert alert-danger">
             <% @user.errors.full_messages.each do |message| %>
@@ -37,8 +37,8 @@
     </div>
 
     <div class="mb-3">
-    <%= form.label :user_instrument %>
-    <%=  form.text_field :instrument_id, class: "form-control", placeholder: "instrument_id" %>
+        <%= form.label :instrument_played %>
+        <%=  form.text_field :instrument_id, class: "form-control", placeholder: "instrument_id" %>
     </div>  
 
     <div class="mb-3">

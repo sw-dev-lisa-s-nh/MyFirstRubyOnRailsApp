@@ -5,13 +5,12 @@
 <table>
   <thead>
     <tr>
-      <th>Id:  &nbsp;</th>
-      <th>Email:  &nbsp;</th>
-      <th>Password Digest: &nbsp; </th>
-      <th>Instrument: &nbsp; </th>
-      <th>First Name: &nbsp; </th>
-      <th>Last Name:  &nbsp;</th>
-      <th>Date Created: &nbsp; </th>
+      <th> Id:  &nbsp; </th>
+      <th> Email:  &nbsp; </th>
+      <th> First Name: &nbsp;  </th>
+      <th> Last Name:  &nbsp;</th>
+      <th> Instrument:  &nbsp;</th>
+      <th> Date Created:  &nbsp;</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -19,13 +18,16 @@
   <tbody>
     <% @users.each do |user| %>
       <tr>
-      <td><%= user.id %></td>
-      <td><%= user.email %></td>
-      <td><%= user.password_digest %></td>
-      <td><%= user.instrument %></td>
-      <td><%= user.first_name %></td>
-      <td><%= user.last_name %></td>
-      <td><%= user.created_at %></td>
+      <td><%=  user.id %></td>
+      <td><%=  user.email %></td>
+      <td><%=  user.first_name %></td>
+      <td><%=  user.last_name %></td>
+        <% @instruments.each do |instrument| %>
+            <% if  user.instrument_id == instrument.id %>
+                <td><%=  instrument.name %></td>
+            <% end %>
+        <% end %>    
+      <td><%=  user.created_at %></td>
     <% end %>
   </tbody>
 </table>

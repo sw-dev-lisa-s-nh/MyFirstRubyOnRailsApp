@@ -1,5 +1,4 @@
-class Instrument < ActiveRecord::Base
-    has_many :user
-    has_many :gig
-    validates :name, presence: true
+class Instrument < ApplicationRecord
+    validates :name, presence: true, uniqueness: true
+
 end
