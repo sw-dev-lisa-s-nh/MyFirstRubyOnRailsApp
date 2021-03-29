@@ -18,15 +18,20 @@ Rails.application.routes.draw do
   
   post "/gig", to: "registration_gig#create", as: :gig
 
+  get "/gig/update", to: "gig#new", as: :new_update_gig
+  
+  post "/gig/update", to: "gig#update", as: :update_gig
+
   get "/gig/all", to: "gig#get", as: :get_all_gigs
+
 
   resources  :user do
     resources :instrument
   end
 
-  resources  :gig do
-    resources :instrument
-  end
+ # resources  :gig do
+ #   resources :instrument
+ # end
 
   root to: "main#index"
 end

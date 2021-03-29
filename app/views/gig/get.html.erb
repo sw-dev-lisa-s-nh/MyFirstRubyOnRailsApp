@@ -9,7 +9,6 @@
     <tr>
       <th>Id: &nbsp; </th>
       <th>Name:  &nbsp;</th>
-      <th>Description: &nbsp; </th>
       <th>Start Time: &nbsp; </th>
       <th>Duration: &nbsp; </th>
       <th>Genre: &nbsp; </th>
@@ -18,7 +17,10 @@
       <th>Phone:  &nbsp;</th>
       <th>Salary: &nbsp; </th>
       <th>Instrument: &nbsp; </th>
+      <th>Status: &nbsp; </th>
+      <th>MusicianId: &nbsp; </th>
       <th>Date Created: &nbsp; </th>
+      <th>Description: &nbsp; </th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -28,7 +30,6 @@
       <tr>
       <td><%= gig.id   %></td>
       <td><%= gig.name   %></td>
-      <td><%= gig.description   %></td>
       <td><%= gig.start_time   %></td>
       <td><%= gig.duration   %></td>
       <td><%= gig.genre   %></td>
@@ -41,7 +42,22 @@
             <td><%=  instrument.name %></td>
         <% end %>
       <% end %>    
+      <% if gig.status == :planned%>
+        <td><%=  Planned %></td>
+      <% elseif gig.status == :open %>
+        <td><%=  Open %></td>
+      <% elseif gig.status == :hired %>
+        <td><%=  Hired %></td>
+      <% elseif gig.status == :closed %>
+        <td><%=  Closed %></td>
+      <% elseif gig.status == :cancelled %>
+        <td><%=  Cancelled %></td>
+      <%else %>
+        <td><%= gig.status %></td>
+      <% end %>
+      <td><%= gig.musician_id %></td>
       <td><%= gig.created_at %></td>
+      <td><%= gig.description   %></td>
     <% end %>
   </tbody>
 </table>

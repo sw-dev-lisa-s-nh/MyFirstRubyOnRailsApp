@@ -4,10 +4,10 @@ class RegistrationGigController < ApplicationController
     end  
 
     def create
-            gig = Gig.new(gig_params)
-            if gig.save
+            @gig = Gig.new(gig_params)
+            if @gig.save
                 # store gig_instrument record here!
-                gig_instrument = GigInstrument.new(gigs_id: gig.id, instruments_id: gig.instrument_id)
+                gig_instrument = GigInstrument.new(gigs_id: @gig.id, instruments_id: @gig.instrument_id)
                 gig_instrument.save
                 redirect_to get_all_gigs_path, notice: "Successfully created gig"
             else

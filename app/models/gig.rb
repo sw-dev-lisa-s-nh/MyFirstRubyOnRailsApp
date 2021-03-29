@@ -1,5 +1,8 @@
 class Gig < ApplicationRecord
-  belongs_to :instrument    
-  validates :name, presence: true
+    enum status: [:planned, :available, :requested, :hired, :closed, :cancelled]
+
+    STATUS_OPTIONS = %w(planned available requested hired closed cancelled) 
+
+    validates :status, :inclusion => {:in => STATUS_OPTIONS}
 
 end

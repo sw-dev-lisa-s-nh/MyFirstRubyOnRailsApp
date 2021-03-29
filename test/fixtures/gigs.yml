@@ -10,7 +10,8 @@ one:
   address: MyString
   phone: MyString
   salary: MyString
-  instrument: one
+  instrument_id: 1
+  status: 1
 
 two:
   name: MyString
@@ -22,4 +23,5 @@ two:
   address: MyString
   phone: MyString
   salary: MyString
-  instrument: two
+  instrument_id: 1
+  status: 1

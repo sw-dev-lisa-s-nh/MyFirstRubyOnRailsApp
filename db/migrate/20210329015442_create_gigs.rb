@@ -10,7 +10,8 @@ class CreateGigs < ActiveRecord::Migration[6.1]
       t.string :address
       t.string :phone
       t.string :salary
-      t.references :instrument, null: false, foreign_key: true
+      t.integer :instrument_id
+      t.integer :status
 
       t.timestamps
     end
