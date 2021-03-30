@@ -1,0 +1,16 @@
+<br>
+<br>
+<h1 style="color:blue;">Delete User:</h1>
+
+<%= form_with model: @user, url: new_delete_user_path do |form| %>
+
+    <div class="mb-3">
+    <%= form.label :id %>
+    <%=  form.text_field :id, class: "form-control", placeholder: "user id to delete" %>
+    </div>  
+
+    <div class="mb-3">
+    <%= form.submit "Delete User", class: "btn btn-primary mb1 bg-navy" %>
+    </div>
+
+<% end %>
