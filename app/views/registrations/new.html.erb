@@ -1,6 +1,6 @@
 <br>
 <br>
-<h1>Add a New User:</h1>
+<h1 style="color:blue;">Add User:</h1>
 
 <%= form_with model: @user, url: new_sign_up_path do |form| %>
     <% if @user.errors.any? %>
@@ -37,11 +37,16 @@
     </div>
 
     <div class="mb-3">
-    <%= form.label :user_instrument %>
-    <%=  form.text_field :instrument_id, class: "form-control", placeholder: "instrument_id" %>
+        <%= form.label :user_instrument %>
+        <%=  form.text_field :instrument_id, class: "form-control", placeholder: "instrument_id" %>
     </div>  
 
     <div class="mb-3">
-        <%= form.submit "Add User", class: "btn btn-primary" %>
+    <%= form.label :role %>
+    <%=  form.text_field :role, class: "form-control", placeholder: "musician or planner" %>
+    </div>  
+
+    <div class="mb-3">
+        <%= form.submit "Add User", class: "btn btn-primary mb1 bg-navy" %>
     </div>
 <% end %>

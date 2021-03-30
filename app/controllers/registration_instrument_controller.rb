@@ -6,7 +6,7 @@ class RegistrationInstrumentController < ApplicationController
     def create
         @instrument = Instrument.new(instrument_params)
         if @instrument.save
-            redirect_to get_all_instruments_path, notice: "Successfully created new instrument"
+            redirect_to get_all_instruments_path, notice: "Successfully created instrument"
         else
             render :new
         end    

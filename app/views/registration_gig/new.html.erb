@@ -1,6 +1,6 @@
 <br>
 <br>
-<h1>Add a New Gig:</h1>
+<h1 style="color:blue;">Add Gig:</h1>
 
 <%= form_with model: @gig, url: gig_path do |form| %>
     <% if @gig.errors.any? %>
@@ -67,7 +67,12 @@
     </div>  
 
     <div class="mb-3">
-        <%= form.submit "Add Gig", class: "btn btn-primary" %>
+    <%= form.label :planner_id %>
+    <%=  form.text_field :planner_id, class: "form-control", placeholder: "id of planner" %>
+    </div>  
+
+    <div class="mb-3">
+        <%= form.submit "Add Gig", class: "btn btn-primary mb1 bg-navy" %>
     </div>
 <% end %>
 

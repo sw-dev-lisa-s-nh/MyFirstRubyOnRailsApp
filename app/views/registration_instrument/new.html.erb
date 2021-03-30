@@ -1,6 +1,6 @@
 <br>
 <br>
-<h1>Add a New Instrument:</h1>
+<h1 style="color:blue;">Add Instrument:</h1>
 
 <%= form_with model: @instrument, url: instrument_path do |form| %>
     <% if @instrument.errors.any? %>
@@ -17,6 +17,6 @@
     </div>  
 
     <div class="mb-3">
-        <%= form.submit "Add Instrument", class: "btn btn-primary" %>
+        <%= form.submit "Add Instrument", class: "btn btn-primary mb1 bg-navy" %>
     </div>
 <% end %>

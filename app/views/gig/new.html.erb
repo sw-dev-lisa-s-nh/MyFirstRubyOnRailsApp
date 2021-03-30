@@ -1,6 +1,6 @@
 <br>
 <br>
-<h1>Update a Gig:</h1>
+<h1 style="color:blue;">Update Gig:</h1>
 
 <%= form_with model: @gig, url: update_gig_path do |form| %>
     <% if @gig.errors.any? %>
@@ -26,8 +26,12 @@
     <%=  form.text_field :musician_id, class: "form-control", placeholder: "valid musician_id" %>
     </div>
 
+    <div class="mb-3">
+    <%= form.label :planner_id %>
+    <%=  form.text_field :planner_id, class: "form-control", placeholder: "valid planner_id" %>
+    </div>
 
     <div class="mb-3">
-        <%= form.submit "Update Gig", class: "btn btn-primary" %>
+        <%= form.submit "Update Gig", class: "btn btn-primary mb1 bg-navy" %>
     </div>
 <% end %>

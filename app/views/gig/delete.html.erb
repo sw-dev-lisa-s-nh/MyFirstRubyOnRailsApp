@@ -1,15 +1,15 @@
 <br>
 <br>
-<h1>Delete a Gig:</h1>
+<h1 style="color:blue;">Delete Gig:</h1>
 
 <%= form_with model: @gig, url: destroy_gig_path do |form| %>
-    
+
     <div class="mb-3">
     <%= form.label :id %>
     <%=  form.text_field :id, class: "form-control", placeholder: "gig id to delete" %>
     </div>  
 
     <div class="mb-3">
-        <%= form.submit "Delete Gig", class: "btn btn-primary" %>
+        <%= form.submit "Delete Gig", class: "btn btn-primary mb1 bg-navy" %>
     </div>
 <% end %>
