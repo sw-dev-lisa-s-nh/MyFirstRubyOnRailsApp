@@ -3,6 +3,7 @@ class UsersController < ApplicationController
     def get
        @users = User.all
        @instruments = Instrument.all
+       @user_instruments = UserInstrument.all
     end
 
     def deleteuser

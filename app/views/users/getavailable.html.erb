@@ -1,23 +1,7 @@
 <br>
 <br>
-<h1 style="color:blue;">List Users:</h1>
+<h1 style="color:blue;">List Available Users:</h1>
 
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <style>
-        table {
-            border-collapse: collapse;
-        }
-        td, th {
-            border: 1px solid black;
-            padding: 1em;
-        }
-    </style>
-    <meta charset="UTF-8">
-  </head>
-
-<body>
 <table>
   <thead>
     <tr>
@@ -28,6 +12,7 @@
       <th> Date Created:  &nbsp;</th>
       <th> User Role:   &nbsp;</th>
       <th> Instrument(s):  &nbsp;</th>
+      <th colspan="3"></th>
     </tr>
   </thead>
 
@@ -45,16 +30,14 @@
             <% @instruments.each do |instrument| %>
                 <% if (user_instrument.instruments_id == instrument.id) %>
                     <td><%= instrument.name  %></td>
-                    <% break %>
                 <% end %>
             <% end %>
         <% end %>    
-      <% end %>
+      <% end %>    
     <% end %>
 </tbody>
 </table>
-</body>
-</html>
+
 <br>
 
 <%= link_to "New user", sign_up_path, class: "btn btn-primary mb1 bg-navy" %>

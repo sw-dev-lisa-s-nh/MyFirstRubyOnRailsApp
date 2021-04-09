@@ -30,7 +30,12 @@ Rails.application.routes.draw do
   
   post "/gig/update", to: "gig#update", as: :update_gig
 
+  get "/gig/by", to: "gig#getby", as: :get_by_gigs
+  
   get "/gig/all", to: "gig#get", as: :get_all_gigs
+
+  get "/gig/all/available", to: "gig#getavailable", as: :get_all_available_gigs
+
 
   #resources  :user do
   #  resources :instrument

@@ -66,6 +66,32 @@ class GigController < ApplicationController
         @gig_instruments = GigInstrument.all
     end
 
+    def getavailable
+        @gigs = Gig.where(status: "available")
+        @instruments = Instrument.all
+        @gig_instruments = GigInstrument.all
+    end
+
+    def getby
+        @gigs = Gig.where(status: "available")
+
+        #if (:status == "available") 
+        #    @gigs = Gig.where(status: "available")
+        #else
+        #    if (:input == "instrument")
+        #        @gigs = Gig.where(id: :instrument_id)
+        #    else 
+        #        if (:input == "user")
+                    # @gig_instruments = GigInstrument.where(id: :user_id)
+                    # @gig_instruments.each do |gig_instrument|
+                    # ??? Will this work? ??? 
+         #       end
+         #   end
+        #  end
+        @instruments = Instrument.all
+        @gig_instruments = GigInstrument.all
+    end
+
     def deleteindex
     end
 

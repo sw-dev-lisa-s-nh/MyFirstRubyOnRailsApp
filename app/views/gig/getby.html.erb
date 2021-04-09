@@ -1,7 +1,6 @@
 <br>
 <br>
 
-
 <h1 style="color:blue;">List Gigs:</h1>
 
 <!DOCTYPE html>
@@ -23,22 +22,21 @@
 <table>
   <thead>
     <tr>
-      <th>Id:  &emsp; </th>
+      <th>Id: &emsp; </th>
       <th>Name:  &emsp;</th>
       <th>Start Time: &emsp; </th>
-      <th>Duration:  &emsp; </th>
-      <th>Genre:  &emsp; </th>
+      <th>Duration: &emsp; </th>
+      <th>Genre: &emsp; </th>
       <th>Date:   &emsp;</th>
-      <th>Address:  &emsp; </th>
-      <th>Phone:   &emsp;</th>
+      <th>Address: &emsp; </th>
+      <th>Phone:  &emsp;</th>
       <th>Salary:  &emsp; </th>
       <th>Status:  &emsp; </th>
       <th>Planner Id:  &emsp; </th>
-      <th>Date Created:  &emsp; </th>
-      <th>Description:  &emsp;</th>
-      <th>Instrument:  </th>
-      <th>Status:  </th>
-      <th>Musician:  </th>
+      <th>Description:  &emsp; </th>
+      <th>Instrument(s):  &emsp; </th>
+      <th>Status:  &emsp; </th>
+      <th>Musician:  &emsp; </th>
     </tr>
   </thead>
 
@@ -56,7 +54,6 @@
       <td><%= gig.salary   %></td>  
       <td><%= gig.status %></td>
       <td><%= gig.planner_id %></td>
-      <td><%= gig.created_at %></td>
       <td><%= gig.description   %></td>
       <% @gig_instruments.each do |gig_instrument| %>
         <% if (gig.id == gig_instrument.gigs_id) %>
@@ -64,8 +61,8 @@
                 <% if (gig_instrument.instruments_id == instrument.id) %>
                     <td><%= instrument.name %></td> <td><%=gig_instrument.gig_instrument_status %></td>
                     <td><%= gig_instrument.musician_id %></td>
-                    <% break %>
-                <% end %>
+                <% break %>
+            <% end %>
             <% end %>
         <% end %>    
       <% end %>    
