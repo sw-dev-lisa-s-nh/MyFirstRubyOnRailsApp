@@ -21,7 +21,7 @@ class RegistrationGigController < ApplicationController
                         render :new
                     end
                 else
-                    redirect_to gig_path, notice: "Status not valid for this request!"
+                    redirect_to gig_path, notice: "Status not recognized -- enter valid status for this request!"
                 end
             else
                 redirect_to gig_path, notice: "Name field required"
