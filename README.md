@@ -18,7 +18,7 @@ Using the gorails.com template, I was able to create a simple interface in my br
 I will add the rest of this information when I get further along in this implementation!
 ----------------------------------------------------------------------------------------
 
-* How to run the test suite:  Not yet finished
+* How to run the test suite:  In process
 
 * Deployment instructions: 
 		- Rails db:create
@@ -26,6 +26,27 @@ I will add the rest of this information when I get further along in this impleme
 		- In the terminal, run: Rails S
 		- In the browser of your choice:    127.0.0.1:3000 (or localhost:3000)
 		- Follow the instructions... 
+		
+* This app has the following functionality:
+		-  Create Users --  Musicians or Planners (Gigs)
+				-- email must be unique
+				-- password must match re-entered password -- secure password
+				-- instrument must exist in database
+				-- valid "role" must be entered
+		-  Create Instruments -- Any instrument, name must be unique
+		-  Create Gig 
+		-  Show Users, Instruments and Gigs 
+		-  Add multiple instruments to Gigs and Musicians
+		-  A musician can:
+				-- request a Gig 
+						-- checks that they play the instrument requested
+						-- checks that the Gig needs that instrument, and
+									it is available.
+									
+		-  A planner can:
+				-- hire a musician that has requested a gig
+				-- change the status of a Gig (planned, available, closed, cancelled)
+				
 		
 ----------------------------------------------------------------------------------------
 
