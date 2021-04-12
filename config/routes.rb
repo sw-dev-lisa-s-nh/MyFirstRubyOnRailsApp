@@ -26,9 +26,15 @@ Rails.application.routes.draw do
 
   post "/user/delete", to: "users#delete", as: :delete_user
 
+  get "/user/add/instruments", to: "users#addinstrumentsuserindex", as: :new_add_instruments_user
+
+  post "/user/add/instruments", to: "users#addinstrumentsuser", as: :add_instruments_user
+
   get "/gig/update", to: "gig#new", as: :new_update_gig
   
-  post "/gig/update", to: "gig#update", as: :update_gig
+  post "/gig/update", to: "gig#update", as: :create_update_gig
+
+  put "/gig/update", to: "gig#update", as: :update_gig
 
   get "/gig/by", to: "gig#getby", as: :get_by_gigs
   
@@ -36,14 +42,18 @@ Rails.application.routes.draw do
 
   get "/gig/all/available", to: "gig#getavailable", as: :get_all_available_gigs
 
+  get "/gig/add/instruments", to: "gig#addinstrumentsgigindex", as: :new_add_instruments_gig
 
-  #resources  :user do
-  #  resources :instrument
-  #end
+  post "/gig/add/instruments", to: "gig#addinstrumentsgig", as: :add_instruments_gig
 
- # resources  :gig do
- #   resources :instrument
- # end
+
+  resources  :user do
+    resources :instrument
+  end
+
+  resources  :gig do
+    resources :instrument
+  end
 
   root to: "main#index"
 end

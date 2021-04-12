@@ -13,12 +13,6 @@ class RegistrationsController < ApplicationController
                     @instrument = Instrument.find_by(id: @user.instrument_id)
                     user_instrument = UserInstrument.new(users_id: @user.id,  instruments_id: @user.instrument_id)
                     user_instrument.save! 
-                    #@user_instrument = UserInstrument.new
-                    #store user_instrument record here
-                    #@user_instrument. = @instrument
-                    #@user_instrument.user = @user
-                    #@user_instrument.save
-                    #@user.instruments.instrument_ids << @instrument.id
                     redirect_to get_all_users_path, notice: "Successfully created user account"
                 else
                     render :new

@@ -1,0 +1,31 @@
+<br>
+<br>
+
+<h1 style="color:blue;">Add Instrument to Gig:</h1>
+
+<%= form_with model: @gig, url: add_instruments_gig_path do |form| %>
+   <% if @gig != nil %>
+     <% if @gig.errors.any? %>
+        <div class="alert alert-danger">
+            <% @gig.errors.full_messages.each do |message| %>
+                <div><%=message %></div>
+            <% end %>   
+        </div> 
+      <% end %>
+    <% end %>
+
+    <div class="mb-3">
+        <%= form.label :gig_id %>
+        <%=  form.text_field :id, class: "form-control", placeholder: "valid_gig_id" %>
+    </div>
+
+    <div class="mb-3">
+    <%= form.label :instrument_id %>
+    <%=  form.text_field :instrument_id, class: "form-control", placeholder: "valid instrument_id" %>
+    </div>
+
+    <div class="mb-3">
+        <%= form.submit "Add Instrument to Gig", class: "btn btn-primary mb1 bg-navy" %>
+    </div>
+    
+<% end %>

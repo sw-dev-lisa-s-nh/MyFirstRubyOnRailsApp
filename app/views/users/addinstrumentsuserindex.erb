@@ -1,0 +1,31 @@
+<br>
+<br>
+
+<h1 style="color:blue;">Add Instrument to User:</h1>
+
+<%= form_with model: @user, url: add_instruments_user_path do |form| %>
+   <% if @user != nil %>
+     <% if @user.errors.any? %>
+        <div class="alert alert-danger">
+            <% @user.errors.full_messages.each do |message| %>
+                <div><%=message %></div>
+            <% end %>   
+        </div> 
+      <% end %>
+    <% end %>
+
+    <div class="mb-3">
+        <%= form.label :user_id %>
+        <%=  form.text_field :id, class: "form-control", placeholder: "valid_user_id" %>
+    </div>
+
+    <div class="mb-3">
+    <%= form.label :instrument_id %>
+    <%=  form.text_field :instrument_id, class: "form-control", placeholder: "valid instrument_id" %>
+    </div>
+
+    <div class="mb-3">
+        <%= form.submit "Add Instrument to User", class: "btn btn-primary mb1 bg-navy" %>
+    </div>
+    
+<% end %>

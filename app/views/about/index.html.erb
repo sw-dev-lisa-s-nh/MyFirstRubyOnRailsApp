@@ -18,14 +18,19 @@
  <div class="box">
     <div style="color:blue;">&emsp; Create & Delete User Accounts & Display All Users</div>
     <div style="color:blue;">&emsp;&emsp;&emsp;Roles for users:  Planner, Musician or Admin </div>
+    <div style="color:blue;">&emsp;&emsp;&emsp;Musicians can now add additional instruments to their record  </div>
     <br>
     <div style="color:blue;">&emsp;Create Instrument & Display All Instruments</div>
     <br>
-    <div style="color:blue;">&emsp;Create & Delete Gigs  & Display All Gigs -- including the following: </div>
-    <div style="color:blue;">&emsp;&emsp;&emsp;Instruments Requested, Status of Instrument, and Musician assigned to Instrument</div>
+    <div style="color:blue;">&emsp;Create & Delete Gigs, Display All Gigs, & Display All Available Gigs -- including the following: </div>
+    <div style="color:blue;">&emsp;&emsp;&emsp;Instruments Requested, Status of Instrument, and Musician assigned to Gig via Instrument</div>
+    <div style="color:blue;">&emsp;&emsp;&emsp;Planners can now add additional instruments to a Gig  </div>
     <br>
-    <div style="color:blue;">&emsp;Update a Gig -- confirming the Musician plays the requested instrument.</div>
-    <div style="color:blue;">&emsp;&emsp;&emsp;Possible Status: planned, available, requested, hired, closed or cancelled</div>
+    <div style="color:blue;">&emsp;Update a Gig -- currently confirming the Musician plays the requested instrument as a primary instrument.</div>
+    <div style="color:blue;">&emsp;&emsp;&emsp;Possible Status Values: planned, available, requested, hired, closed or cancelled</div>
+    <div style="color:blue;">&emsp;&emsp;&emsp;Ability to set status for individual instruments and add Musician Id for a Gig Instrument.</div>
+    <div style="color:blue;">&emsp;&emsp;&emsp;Correctly checks multiple instruments for a Gig and for each Musician requesting a Gig.</div>
+    <div style="color:blue;">&emsp;&emsp;&emsp;Status is set at the Gig level, but also for individual Gig Instruments.</div>
 </div>
  
 <br>
@@ -33,11 +38,18 @@
     <h3  style="color:blue;">More Functionality In Development</h3>
 </div>
 <div class="box">
-
-    <div style="color:blue;">&emsp;Musicians will be able to register multiple instruments </div>
-    <div style="color:blue;">&emsp;& Gigs will be able to request multiple instruments </div>
-    <div style="color:blue;">&emsp;&emsp;&emsp;*** Database support is implemented for Gigs & Musicians. </div>
-    <div style="color:blue;">&emsp;&emsp;&emsp;*** NOT YET IMPLEMENTED:  Input, & Display for multiple instruments. </div>
-    <div style="color:blue;">&emsp;&emsp;&emsp;*** NOT YET IMPLEMENTED:  Updating Gigs & Musicians to add Extra Instruments</div>
+    <div style="color:blue;">&emsp;Functionality  for Addresses:</div>
+    <div style="color:blue;">&emsp;&emsp;&emsp;*** Database support is complete for address storage. </div>
+    <div style="color:blue;">&emsp;&emsp;&emsp;*** NOT YET IMPLEMENTED:  Functionality to attach addresses via foreign key to Gigs and Musicians(Users).</div>
+    <br>
+    <div style="color:blue;">&emsp;Functionality  for Instrument removal from Gigs & Users:</div>
+    <div style="color:blue;">&emsp;&emsp;&emsp;*** NOT YET IMPLEMENTED:  Functionality to remove an instrument from a Gig or a Musician(User)</div>
+    <br>
+    <div style="color:blue;">&emsp;Functionality  for more robust Retrieval of Gigs  </div>
+    <div style="color:blue;">&emsp;&emsp;&emsp;*** NOT YET IMPLEMENTED:  Functionality to retrieve Gigs by Musician Id Assignment.</div>
+    <div style="color:blue;">&emsp;&emsp;&emsp;*** NOT YET IMPLEMENTED:  Functionality to retrieve Gigs by Location (Needs updated Address Functionality).</div>
+    <br><br>
+    <br>
+    <br>
 </div>
 

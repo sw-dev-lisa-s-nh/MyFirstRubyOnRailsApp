@@ -33,7 +33,7 @@
         </li> 
 
         <li class="nav-item">
-        <%= link_to "Get Gigs By...", get_by_gigs_path, class: "nav-link" %>  
+        <%= link_to "Get Available Gigs", get_all_available_gigs_path, class: "nav-link" %>  
         </li> 
      
         <li class="nav-item">
@@ -42,6 +42,14 @@
 
         <li class="nav-item">
           <%= link_to "Update Gig", update_gig_path, class: "nav-link" %>  
+        </li>
+
+        <li class="nav-item">
+        <%= link_to "Add Instruments to Gig", add_instruments_gig_path, class: "nav-link" %>  
+        </li>
+
+        <li class="nav-item">
+        <%= link_to "Add Instruments to User", add_instruments_user_path, class: "nav-link" %>  
         </li>
 
         <li class="nav-item">
