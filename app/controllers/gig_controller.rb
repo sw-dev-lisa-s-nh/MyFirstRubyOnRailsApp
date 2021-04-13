@@ -39,31 +39,37 @@ class GigController < ApplicationController
                             if (params[:gig][:status].to_sym == :requested)
                                 if (gig_instrument.gig_instrument_status.to_sym == :available)
                                     if gig_instrument.update(gig_instrument_status: params[:gig][:status],  musician_id: params[:gig][:musician_id])
-                                        redirect_to get_all_gigs_path, notice: "Successfully updated gig"                   
+                                        redirect_to get_all_gigs_path, notice: "Successfully updated gig"   
+                                        return                
                                     else
                                         redirect_to update_gig_path, notice: "Gig NOT updated"
+                                        return                
                                     end
-                                else
-                                    redirect_to update_gig_path, notice: "Requested Gig is not available"
+                                #else
+                                #    redirect_to update_gig_path, notice: "Requested Gig is not available"                
                                 end
                             else
                                 if (@gig.planner_id == params[:gig][:planner_id].to_i)
                                     if gig_instrument.update(gig_instrument_status: params[:gig][:status],  musician_id: params[:gig][:musician_id])
-                                        redirect_to get_all_gigs_path, notice: "Successfully updated gig"                   
+                                        redirect_to get_all_gigs_path, notice: "Successfully updated gig" 
+                                        return                                  
                                     else
                                         redirect_to update_gig_path, notice: "Gig NOT updated"
+                                        return                
                                     end
                                 else
                                     redirect_to update_gig_path, notice: "Only a planner can update this status"
+                                    return                
                                 end
                             end
                         else
                             redirect_to update_gig_path, notice: "Status requested is NOT a valid option"
+                            return                
                         end
                     end
                   end
                 else
-                    redirect_to update_gig_path, notice: "User does not play requested Instrument"
+                    redirect_to update_gig_path, notice: "User does not play requested Instrument"              
                 end
           # if no musician_id is entered
           else
