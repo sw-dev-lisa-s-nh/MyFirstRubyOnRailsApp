@@ -9,11 +9,11 @@ class GigController < ApplicationController
        userPlaysRequestedInstrument = false
        if (@gig = Gig.find_by(id: params[:gig][:id]))
           if (@user = User.find_by(id: params[:gig][:musician_id]))
+                # Find the database record for the requested instrument
                 @instrument = Instrument.find_by(id: params[:gig][:instrument_id])
+
                 # Get all requesting User's records from UserInstrument
                 @user_instruments = UserInstrument.where(users_id: @user.id)
-
-                #THIS DOESN'T WORK!
 
                 # Check if musician requesting Gig plays instrument needed for the Gig
                 # Check to see if User plays requested instrument
@@ -26,8 +26,9 @@ class GigController < ApplicationController
                 # Get all  GigInstruments for this GigId
                 @gig_instruments = GigInstrument.where(gigs_id: @gig.id)
 
+                # if User does play the instrument that is requested
                 if (userPlaysRequestedInstrument == true)
-                # Loop through them
+                # Loop through all the instruments requested for a particular gig!
                 #   Check to see if the @gig_instrument.instruments_id matches the instrument passed in)
                   @gig_instruments.each do |gig_instrument|
                      # if (@user.instrument_id == @gig.instrument_id) 
