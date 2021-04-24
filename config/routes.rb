@@ -1,5 +1,7 @@
 # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 Rails.application.routes.draw do
+  root "main#index"
+
   get "/about", to: "about#index", as: :about
 
   get "/sign_up", to: "registrations#new", as: :new_sign_up
@@ -54,6 +56,4 @@ Rails.application.routes.draw do
   resources  :gig do
     resources :instrument
   end
-
-  root to: "main#index"
 end
