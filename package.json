@@ -1,8 +1,8 @@
 {
   "name": "myapp",
-  "private": true,
+  "private": false,
   "scripts": {
-    "start": "${PORT}:application.js"
+    "start": "${PORT}/"
   },
   "dependencies": {
     "@rails/actioncable": "^6.0.0",
