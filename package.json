@@ -2,15 +2,21 @@
   "name": "myapp",
   "private": true,
   "scripts": {
-    "start" : "application.js"
-  },
+    "dev": "react-scripts start",
+    "start": "serve -s build",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "heroku-postbuild": "npm run build"
+    },
   "dependencies": {
     "@rails/actioncable": "^6.0.0",
     "@rails/activestorage": "^6.0.0",
     "@rails/ujs": "^6.0.0",
     "@rails/webpacker": "5.2.1",
+    "serve": "^11.3.2",
     "turbolinks": "^5.2.0"
-  }, 
+  },
   "version": "0.1.0",
   "devDependencies": {
     "webpack-dev-server": "^3.11.2"
