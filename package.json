@@ -1,9 +1,8 @@
 {
   "name": "myapp",
   "private": false,
-  "scripts": {
-    "start": "${PORT}/"
-  },
+  "license": "UNLICENSED",
+  "main" : "index.js",
   "dependencies": {
     "@rails/actioncable": "^6.0.0",
     "@rails/activestorage": "^6.0.0",
