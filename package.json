@@ -1,6 +1,6 @@
 {
   "name": "myapp",
-  "private": false,
+  "private": true,
   "license": "UNLICENSED",
   "main" : "index.js",
   "dependencies": {
